@@ -217,8 +217,10 @@ namespace VPet_Simulator.Windows
                                         }
                                         else if (certificate.Subject != "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" && !IsPassMOD(mw))
                                         {//不是通过模组,不加载
-                                            SuccessLoad = false;
-                                            continue;
+                                            //SuccessLoad = false;
+                                            //continue;
+                                            if (authtype != "FAIL")
+                                                authtype = "[认证]".Translate();
                                         }
                                         else if (authtype != "")
                                         {
