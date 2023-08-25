@@ -17,7 +17,6 @@ namespace VPet.Plugin.DemoClock
     public partial class TimeClock : UserControl
     {
         DemoClock Master;
-        public DispatcherTimer TimeTimer;
         public DispatcherTimer CountTimer;
         public DateTime StartTime;
         public TimeSpan PauseTime;
@@ -28,11 +27,6 @@ namespace VPet.Plugin.DemoClock
             InitializeComponent();
             Master = master;
             Master.MW.Main.UIGrid.Children.Insert(0, this);
-
-            TimeTimer = new DispatcherTimer();
-            TimeTimer.Interval = TimeSpan.FromSeconds(1);
-            TimeTimer.Tick += TimeTimer_Tick;
-            TimeTimer.Start();
 
             CountTimer = new DispatcherTimer();
             //CountTimer.Interval = TimeSpan.FromSeconds(1);
@@ -48,9 +42,6 @@ namespace VPet.Plugin.DemoClock
 
             Opacity = master.Set.Opacity;
             Margin = new Thickness(0, master.Set.PlaceTop, 0, 0);
-            Master.MW.Main.MouseEnter += UserControl_MouseEnter;
-            Master.MW.Main.MouseLeave += UserControl_MouseLeave;
-            TimeTimer_Tick();
 
         }
 
@@ -65,21 +56,6 @@ namespace VPet.Plugin.DemoClock
                     Master.MW.Main.UIGrid_Back.Children.Add(this);
                 }
             });
-        }
-        private void UserControl_MouseEnter(object sender, MouseEventArgs e)
-        {
-            if (Master.Set.PlaceAutoBack && Master.MW.Main.UIGrid_Back.Children.Contains(this))
-            {
-                Master.MW.Main.UIGrid_Back.Children.Remove(this);
-                Master.MW.Main.UIGrid.Children.Insert(0, this);
-            }
-            Opacity = 0.95;
-            CloseTimer.Enabled = false;
-        }
-
-        private void UserControl_MouseLeave(object sender, MouseEventArgs e)
-        {
-            CloseTimer.Start();
         }
 
         bool TimeSpanChanged = false;
@@ -116,21 +92,6 @@ namespace VPet.Plugin.DemoClock
                 }
             }
             return music;
-        }
-
-        private void TimeTimer_Tick(object sender = null, EventArgs e = null)
-        {
-            //相关UI更新
-            var diff = DateTime.Now - StartTime + PauseTime;
-            if (diff.TotalMinutes > 2)
-            {
-                if (TimeSpanChanged)
-                {
-                    CountTimer.Interval = TimeSpan.FromSeconds(1);
-                    TimeSpanChanged = false;
-                }
-                getTheProcesses();
-            }
         }
     }
 }
