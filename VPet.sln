@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VPet-Simulator.Windows.Inte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VPet.Plugin.DemoClock", "VPet.Plugin.DemoClock\VPet.Plugin.DemoClock.csproj", "{D23F1150-999F-4698-800C-4E60FF853A3E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VPet.Plugin.UserStates", "VPet.Plugin.UserStates\VPet.Plugin.UserStates.csproj", "{97D6E296-51F0-475B-A9DA-231D58F84ED1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,18 @@ Global
 		{D23F1150-999F-4698-800C-4E60FF853A3E}.Release|x64.Build.0 = Release|Any CPU
 		{D23F1150-999F-4698-800C-4E60FF853A3E}.Release|x86.ActiveCfg = Release|Any CPU
 		{D23F1150-999F-4698-800C-4E60FF853A3E}.Release|x86.Build.0 = Release|Any CPU
+		{97D6E296-51F0-475B-A9DA-231D58F84ED1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97D6E296-51F0-475B-A9DA-231D58F84ED1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97D6E296-51F0-475B-A9DA-231D58F84ED1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{97D6E296-51F0-475B-A9DA-231D58F84ED1}.Debug|x64.Build.0 = Debug|Any CPU
+		{97D6E296-51F0-475B-A9DA-231D58F84ED1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{97D6E296-51F0-475B-A9DA-231D58F84ED1}.Debug|x86.Build.0 = Debug|Any CPU
+		{97D6E296-51F0-475B-A9DA-231D58F84ED1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97D6E296-51F0-475B-A9DA-231D58F84ED1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97D6E296-51F0-475B-A9DA-231D58F84ED1}.Release|x64.ActiveCfg = Release|Any CPU
+		{97D6E296-51F0-475B-A9DA-231D58F84ED1}.Release|x64.Build.0 = Release|Any CPU
+		{97D6E296-51F0-475B-A9DA-231D58F84ED1}.Release|x86.ActiveCfg = Release|Any CPU
+		{97D6E296-51F0-475B-A9DA-231D58F84ED1}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
